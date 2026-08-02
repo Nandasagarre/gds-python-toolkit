@@ -20,6 +20,28 @@ A Python toolkit for exploring, analyzing, and manipulating GDSII layouts using 
 - ✔ Count shapes by layer
 - ✔ Modular project structure
 
+## Usage
+
+The toolkit provides utilities to:
+
+- Load and validate GDSII layouts
+- Inspect layout metadata (DBU, top cell, hierarchy)
+- Explore cells, instances, and layer information
+- Traverse hierarchical layouts
+- Count and classify layout shapes
+- Extract geometry (polygons, boxes, paths, text)
+- Compute layout statistics (area, density, bounding boxes)
+- Export reports (CSV/JSON)
+- Perform basic geometry operations
+- Generate and modify GDSII layouts
+- Build utilities for Mask Data Preparation (MDP) workflows
+
+Run the toolkit:
+
+```bash
+python main.py
+```
+
 ## Planned Features
 
 - Shape extraction (Box, Polygon, Path, Text)
