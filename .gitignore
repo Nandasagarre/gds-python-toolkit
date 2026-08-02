@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+
+.vscode/
+
+data/output/*
+!data/output/.gitkeep
+
+__pycache__/
+*.py[cod]
+.venv/
