@@ -1,95 +1,106 @@
 # GDS Python Toolkit
 
-A Python toolkit for exploring, analyzing, and manipulating GDSII layouts using the KLayout Python API. The project is structured as a modular, reusable library rather than a collection of standalone scripts.
+A lightweight Python toolkit for reading, analyzing, editing, and writing GDSII layouts using the KLayout Python API.
 
-## Scope
+The project is designed as a reusable Python library for GDSII manipulation and serves as a foundation for future Mask Data Preparation (MDP) and semiconductor CAD automation projects.
 
-- Read and validate GDSII files
-- Explore layout hierarchy
-- Inspect cells, layers, and shapes
-- Extract geometry and statistics
-- Perform basic geometry operations
-- Build utilities useful for mask data preparation (MDP) workflows
+---
 
-## Current Features
+## Features
 
-- ✔ Load GDSII layouts
-- ✔ Layout information (DBU, top cell, cell/layer count)
-- ✔ Enumerate layers
-- ✔ Enumerate cells and hierarchy
-- ✔ Count shapes by layer
-- ✔ Modular project structure
+### Layout Analysis
 
-## Usage
+- Read GDSII layouts
+- Inspect layout information
+- Enumerate layers
+- Enumerate cells and hierarchy
+- Count shapes by layer
+- Extract layout geometry
+- Compute basic geometry metrics
+- Generate layer statistics
+- Filter shapes by layer
 
-The toolkit provides utilities to:
+### Layout Editing
 
-- Load and validate GDSII layouts
-- Inspect layout metadata (DBU, top cell, hierarchy)
-- Explore cells, instances, and layer information
-- Traverse hierarchical layouts
-- Count and classify layout shapes
-- Extract geometry (polygons, boxes, paths, text)
-- Compute layout statistics (area, density, bounding boxes)
-- Export reports (CSV/JSON)
-- Perform basic geometry operations
-- Generate and modify GDSII layouts
-- Build utilities for Mask Data Preparation (MDP) workflows
+- Create new layers
+- Insert rectangular geometry
+- Move geometry
+- Delete layer geometry
+- Duplicate cells
+- Write modified GDSII layouts
 
-Run the toolkit:
+### Export
+
+- Export extracted geometry to CSV
+
+---
+
+## Examples
 
 ```bash
-python main.py
+# Analyze a layout
+python -m examples.analyze_layout
+
+# Export geometry to CSV
+python -m examples.export_csv
+
+# Edit a layout and write a new GDS
+python -m examples.edit_layout
 ```
 
-## Planned Features
-
-- Shape extraction (Box, Polygon, Path, Text)
-- Hierarchy traversal utilities
-- Bounding box extraction
-- Area and density calculation
-- Layer filtering
-- Boolean geometry operations
-- Layout flattening
-- CSV/JSON reporting
-- GDS writer
-- Ring Oscillator layout case study
-- Mask Job Deck generation
-- Basic Mask Data Preparation utilities
+---
 
 ## Project Structure
 
 ```text
 gds-python-toolkit/
 ├── data/
+│   ├── input/
+│   └── output/
 ├── docs/
-├── scripts/
+├── examples/
 ├── src/
 │   └── gdstool/
 ├── tests/
-└── main.py
+├── main.py
+└── README.md
 ```
 
-## Tech Stack
+---
+
+## Technology
 
 - Python 3
-- KLayout Python API (`pya`)
+- KLayout Python API
 - Git
 - VS Code
 
-## Status
+---
 
-🚧 Active development
+## Repository Scope
 
-Current focus:
-- Build reusable GDS analysis APIs
-- Understand the KLayout database model
-- Progress toward an end-to-end mask preparation workflow
+This repository focuses on generic GDSII operations:
 
-## Long-Term Goal
+- Reading and writing layouts
+- Geometry extraction
+- Layout inspection
+- Basic editing
+- Data export
 
-Develop a professional-quality open-source toolkit for:
-- Layout Engineering
-- Photomask Engineering
-- Mask Data Preparation (MDP)
-- Semiconductor CAD Automation
+Advanced Mask Data Preparation algorithms (biasing, density analysis, fracture, OPC, etc.) are intentionally kept outside the scope of this repository and will be implemented in dedicated projects.
+
+---
+
+## Future Work
+
+- Additional geometry editing operations
+- Improved CLI
+- Unit tests
+- API documentation
+- Package distribution (`pip`)
+
+---
+
+## License
+
+MIT License
